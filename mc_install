@@ -1,0 +1,72 @@
+sudo yum install git
+sudo yum install zsh
+sudo yum install tmux
+sudo yum install ack
+sudo useradd -s /bin/zsh -m -d /home/fmcevoy fmcevoy
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+if [ ! -d "~/workspaces" ]; then
+  mkdir ~/workspaces
+fi
+if [ ! -d "~/browse" ]; then
+  mkdir ~/browse
+fi
+ln -s ~/Fmcevoy/fintanmcevoy.zsh-theme ~/.oh-my-zsh/themes/fintanmcevoy.zsh-theme
+ln -s ~/Fmcevoy/dotfiles/zshrc ~/.zshrc
+ln -s ~/Fmcevoy/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/Fmcevoy/dotfiles/jrnl_config ~/.jrnl_config
+ln -s ~/Fmcevoy/dotfiles/vimrc ~/.vimrc
+ln -s ~/Fmcevoy/dotfiles/tmux_ssh_agent ~/.tmux_ssh_agent
+ln -s ~/Fmcevoy/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/Fmcevoy/dotfiles/gitexcludes ~/.config/git/excludes
+ln -s ~/Fmcevoy/dotfiles/setup.cfg ~/workspaces/setup.cfg
+source ~/Fmcevoy/dotfiles/path_fix
+cd ~
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+cd  ~/.vim/autoload
+wget --no-check-certificate https://tpo.pe/pathogen.vim
+cd ~/.vim/bundle
+git clone https://github.com/vim-scripts/scrollfix.git
+git clone https://github.com/tpope/vim-fugitive.git
+git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/vim-scripts/taglist.vim.git
+git clone https://github.com/stephpy/vim-yaml.git
+git clone https://github.com/bling/vim-airline.git
+git clone https://github.com/nvie/vim-flake8.git
+git clone https://github.com/jiangmiao/auto-pairs.git
+git clone https://github.com/ervandew/supertab
+git clone https://github.com/davidhalter/jedi-vim.git
+cd ~/.vim/bundle/jedi-vim
+git submodule update --init
+cd ~/.vim/bundle
+git clone https://github.com/vim-scripts/Command-T.git
+cd ~/.vim/bundle/Command-T/ruby/command-t
+ruby extconf.rb
+make
+sudo make install
+
+mkdir ~/.vim/colors
+cp ~/Fmcevoy/dotfiles/molokai.vim ~/.vim/colors/
+
+ln -s ~/Fmcevoy/filetype.vim ~/.vim/filetype.vim
+
+source ~/Fmcevoy/dotfiles/path_fix
+cd ~
+git clone https://github.com/visit1985/mdp.git
+cd mdp
+make
+sudo make install
+cd ~
+sudo rm -r mdp
+
+pyenv install 2.7.6
+pyenv global 2.7.6
+
+easy_install pip
+
+pip install flake8
+pip install pylint
+pip install jrnl
+pip install ipython
+pip install isort
+sudo chsh -s /bin/zsh

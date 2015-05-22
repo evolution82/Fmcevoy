@@ -1,0 +1,16 @@
+[user]
+	email = fintan.mcevoy@gmail.com
+	name = Fintan McEvoy
+[color]
+	ui = auto
+[core]
+	pager = less -FMRiX
+	excludesfile = /home/fmcevoy/.config/git/excludes
+[push]
+	default = simple
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch -v
+    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(cyan)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order

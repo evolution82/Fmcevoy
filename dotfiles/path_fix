@@ -1,0 +1,6 @@
+#!/bin/bash
+export PATH=$PATH:/usr/sbin/:/usr/local/:/sbin
+export PATH=$PATH:~/Fmcevoy/
+export PATH=/home/fmcevoy/.pyenv/bin:$PATH
+
+eval "$(pyenv init -)"

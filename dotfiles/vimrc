@@ -1,0 +1,105 @@
+call pathogen#infect()
+syntax on
+syntax enable
+filetype plugin indent on
+colorscheme molokai
+set rnu
+function ToggleNumbersOn()
+    set rnu!
+   set nu
+endfunction
+function ToggleRelativeOn()
+    set nu!
+    set rnu
+endfunction
+autocmd FocusLost * call ToggleNumbersOn()
+autocmd FocusGained * call ToggleRelativeOn()
+autocmd InsertEnter * call ToggleNumbersOn()
+autocmd InsertLeave * call ToggleRelativeOn()
+autocmd FileType python setlocal completeopt-=preview
+set rtp +=/home/fmcevoy/.vim/bundle/powerline/powerline/bindings/vim
+set noswapfile
+set wildignore+=*.pyc,*.o,*.obj,.git,build
+set splitright
+set keymap=insert-only_capslock
+set ttymouse=xterm2
+set backspace=2
+set laststatus=2
+set t_Co=256
+set laststatus=2
+set showtabline=2
+set noshowmode
+set nocompatible
+set background=dark
+set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+set tabstop=4     " a hard TAB displays as 4 columns
+set expandtab     " insert spaces when hitting TABs
+set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set shiftround    " round indent to multiple of 'shiftwidth'
+set autoindent    " align the new line indent with the previous line
+set cursorline
+set wildmenu
+set pastetoggle=<leader>a
+
+hi CursorLine   cterm=NONE ctermbg=52
+
+let g:Tlist_WinWidth=60
+let g:CommandTNeverShowDotFiles = 1
+let g:CommandTScanDotDirectories = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:scrollfix = 30
+
+noremap <Leader>s :wa<CR>
+noremap <Leader>q :qa<CR>
+noremap <Leader>! :qa!<CR>
+
+
+noremap <Leader>d :bd<CR>
+noremap <Leader>g :Gblame<CR><C-W>h
+
+noremap <Leader>v :so ~/.vimrc<CR>
+
+noremap <Leader>c :set cursorcolumn!<CR>
+noremap <Leader>l :Tlist<CR><C-W>h
+noremap <Leader>e :NERDTreeToggle<CR>
+noremap <Leader>f :SyntasticCheck flake8 pylint<CR>
+
+noremap zz <ESC>lx
+inoremap hhh <ESC>
+inoremap lll <ESC>
+inoremap eee <ESC>
+inoremap jj <ESC>:w<CR>
+inoremap kk <ESC>
+inoremap bb <ESC>
+inoremap ww <ESC>
+inoremap \\ <ESC>
+
+nnoremap gp :bp<CR>
+nnoremap gn :bn<CR>
+nnoremap gl :ls<CR>
+nnoremap gb :ls<CR>:b<Space>
+nnoremap gs :e#<CR>
+nnoremap gx :bd<CR>
+
+nnoremap ;; :sort<CR>
+
+nnoremap pi oimport pdb; pdb.set_trace()<Esc>:w<CR>
+nnoremap mi oimport module; add_logger('module', logging.DEBUG)<Esc><C-V>:s/module/
+nnoremap oi oimport module;<CR>mlog = logging.getLogger('module');<CR>console_handler = logging.StreamHandler(sys.stderr);<CR>console_handler.setLevel(logging.DEBUG);<CR>mlog.addHandler(console_handler);<CR>mlog.setLevel(logging.DEBUG);<Esc><C-V>6k:s/module/
+
+nmap <S-CR> O<Esc>j
+nmap <CR> o<Esc>k
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*

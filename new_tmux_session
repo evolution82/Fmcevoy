@@ -1,0 +1,28 @@
+tmux kill-session -t bash
+tmux new-session -d -s bash
+tmux select-window -t bash:0
+tmux rename-window 'bash zero'
+tmux split-window -h
+tmux split-window -v -t 0
+tmux split-window -v -t 1
+tmux new-window
+tmux select-window -t bash:1
+tmux rename-window 'bash one'
+tmux split-window -h
+tmux split-window -v -t 0
+tmux split-window -v -t 1
+tmux new-window
+tmux send-keys "vim -c 'cd ~/workspaces/'" 'C-m'
+tmux select-window -t bash:2
+tmux rename-window 'develop'
+tmux split-window -h
+tmux split-window -v -t 1
+tmux split-window -v -t 2
+tmux send-keys "irssi" 'C-m'
+tmux new-window
+tmux send-keys "vim --cmd 'cd ~/browse' -c 'NERDTree'" 'C-m'
+tmux select-window -t bash:3
+tmux rename-window 'browse'
+tmux select-window -t bash:2
+tmux select-pane -t 0
+tmux -2 attach-session -t bash
