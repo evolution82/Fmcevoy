@@ -2,6 +2,9 @@ sudo yum install git
 sudo yum install zsh
 sudo yum install tmux
 sudo yum install ack
+sudo yum install patch
+sudo yum install gcc
+sudo yum install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
 sudo useradd -s /bin/zsh -m -d /home/fmcevoy fmcevoy
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -59,8 +62,8 @@ sudo make install
 cd ~
 sudo rm -r mdp
 
-pyenv install 2.7.6
-pyenv global 2.7.6
+pyenv install 2.7.9
+pyenv global 2.7.9
 
 easy_install pip
 
