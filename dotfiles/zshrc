@@ -11,8 +11,7 @@ export PATH=~:~/Fmcevoy/:$PATH
 stty erase '^?'
 
 TERM='xterm-256color'
-
-eval "$(ssh-agent -s)"
+eval $(ssh-agent)
 eval "$(pyenv init -)"
 alias python='ipython'
 alias nano='vim'
@@ -53,13 +52,5 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
-
-SOCK="/tmp/ssh-agent-$USER-tmux"
-if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
-then
-    rm -f /tmp/ssh-agent-$USER-tmux
-    ln -sf $SSH_AUTH_SOCK $SOCK
-    export SSH_AUTH_SOCK=$SOCK
-fi
 
 t
