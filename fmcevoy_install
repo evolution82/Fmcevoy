@@ -1,7 +1,7 @@
 git clone https://github.com/fmcevoy/Fmcevoy.git
 sudo yum -y install git zsh tmux ack irssi patch gcc
 sudo yum -y install mysql-devel ruby-devel rubygems
-sudo yum install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
+sudo yum -y  install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 if [ ! -d "~/workspaces" ]; then
