@@ -1,4 +1,4 @@
-# INSATLL
+# INSTALL
 * Launch Instance - Default settings
 * Associate Elastic IP
 * ssh as ec2_user
