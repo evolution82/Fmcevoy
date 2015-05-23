@@ -20,6 +20,7 @@ ln -s ~/Fmcevoy/dotfiles/tmux_ssh_agent ~/.tmux_ssh_agent
 ln -s ~/Fmcevoy/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Fmcevoy/dotfiles/gitexcludes ~/.config/git/excludes
 ln -s ~/Fmcevoy/dotfiles/setup.cfg ~/workspaces/setup.cfg
+ln -s ~/Fmcevoy/dotfiles/irssi ~/.irssi
 source ~/Fmcevoy/dotfiles/path_fix
 cd ~
 mkdir -p ~/.vim/autoload ~/.vim/bundle
