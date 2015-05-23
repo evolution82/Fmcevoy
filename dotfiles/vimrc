@@ -21,7 +21,6 @@ set rtp +=/home/fmcevoy/.vim/bundle/powerline/powerline/bindings/vim
 set noswapfile
 set wildignore+=*.pyc,*.o,*.obj,.git,build
 set splitright
-set keymap=insert-only_capslock
 set ttymouse=xterm2
 set backspace=2
 set laststatus=2

@@ -1,11 +1,15 @@
-sudo yum install git
-sudo yum install zsh
-sudo yum install tmux
-sudo yum install ack
-sudo yum install patch
-sudo yum install gcc
+useradd fmcevoy
+sudo chsh -s /bin/zsh fmcevoy
+sudo bash
+echo "fmcevoy ALL = NOPASSWD: ALL" >> /etc/sudoers.d/cloud-init
+echo "fmcevoy ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/cloud-init
+exit
+sudo su - fmcevoy
+ssh-keygen -t rsa
+cp ~/.ssh/rsa_id.pub ~/.ssh/authorized_keys
+sudo yum -y install git zsh tmux ack irssi patch gcc
+sudo yum -y install mysql-devel ruby-devel rubygems
 sudo yum install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
-sudo useradd -s /bin/zsh -m -d /home/fmcevoy fmcevoy
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 if [ ! -d "~/workspaces" ]; then
@@ -32,7 +36,6 @@ cd ~/.vim/bundle
 git clone https://github.com/vim-scripts/scrollfix.git
 git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/scrooloose/nerdtree.git
-git clone https://github.com/vim-scripts/taglist.vim.git
 git clone https://github.com/stephpy/vim-yaml.git
 git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/nvie/vim-flake8.git
@@ -72,4 +75,11 @@ pip install pylint
 pip install jrnl
 pip install ipython
 pip install isort
-sudo chsh -s /bin/zsh
+
+pip install virtualenv
+mkdir ~/workspaces/playeah
+cd ~/workspaces/playeah
+virtualenv venv
+source venv/bin/activate
+pip install -r ~/Fmcevoy/playeah_dependencies
+git clone https://github.com/fmcevoy/playeah.git

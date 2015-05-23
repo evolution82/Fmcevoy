@@ -12,7 +12,7 @@ tmux split-window -h
 tmux split-window -v -t 0
 tmux split-window -v -t 1
 tmux new-window
-tmux send-keys "vim -c 'cd ~/workspaces/'" 'C-m'
+tmux send-keys "vim -c 'cd ~/workspaces/playeah/playeah'" 'C-m'
 tmux select-window -t bash:2
 tmux rename-window 'develop'
 tmux split-window -h

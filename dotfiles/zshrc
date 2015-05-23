@@ -23,11 +23,11 @@ alias t='tmux attach-session -t bash'
 alias c='new_tmux_session'
 alias grep='grep --color'
 alias ls='ls --color'
-
-alias wcc='cd ~/workspace/'
+alias wp='cd ~/workspaces/playeah'
+alias act='source venv/bin/activate'
+alias deact='deactivate'
 gdd() {
     grep -r -E "$1" .
-}
 }
 ptest() {
     python -m py.test test/$1 -s -vv --pdb
