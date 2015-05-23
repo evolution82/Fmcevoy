@@ -1,0 +1,3 @@
+cd ~/.ssh/
+ssh-keygen -t rsa -b 4096 -C "fintan.mcevoy@gmail.com"
+ssh-add ~/.ssh/github

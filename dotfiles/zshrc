@@ -12,6 +12,7 @@ stty erase '^?'
 
 TERM='xterm-256color'
 
+eval "$(ssh-agent -s)"
 eval "$(pyenv init -)"
 alias python='ipython'
 alias nano='vim'
