@@ -59,21 +59,21 @@ sudo make install
 cd ~
 sudo rm -r mdp
 
-pyenv install 2.7.9
-pyenv global 2.7.9
+pyenv install 3.4.3
+pyenv global 3.4.3 
 
 easy_install pip
-
+pip install --upgrade pip
 pip install flake8
 pip install pylint
 pip install jrnl
 pip install ipython
 pip install isort
-
 pip install virtualenv
+
 mkdir ~/workspaces/playeah
 cd ~/workspaces/playeah
 virtualenv venv
 source venv/bin/activate
 pip install -r ~/Fmcevoy/playeah_dependencies
-git clone https://github.com/fmcevoy/playeah.git
+git clone git@github.com:fmcevoy/playeah.git
