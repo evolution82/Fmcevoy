@@ -1,0 +1,16 @@
+DEVELOP
+python setup.py install - zipped egg in site pacakges
+python setup.py develop - egg with reference link in site-packages
+python setup.py sdist - tar file in dist directory
+
+SUBMIT
+setup.cfg, setup.py, LICENSE.txt mandatory
+See - http://peterdowns.com/posts/first-time-with-pypi.html
+git tag <version> -m "new version message"
+git push --tags origin master
+python setup.py register -r pypitest
+python setup.py sdist upload -r pypitest
+pip install -i https://testpypi.python.org/pypi playeah
+python setup.py register -r pypi
+python setup.py sdist upload -r pypi
+pip install playeah

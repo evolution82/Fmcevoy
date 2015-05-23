@@ -21,6 +21,7 @@ ln -s ~/Fmcevoy/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Fmcevoy/dotfiles/gitexcludes ~/.config/git/excludes
 ln -s ~/Fmcevoy/dotfiles/setup.cfg ~/workspaces/setup.cfg
 ln -s ~/Fmcevoy/dotfiles/irssi ~/.irssi
+ln -s ~/Fmcevoy/dotfiles/pypirc ~/.pypirc
 source ~/Fmcevoy/dotfiles/path_fix
 cd ~
 mkdir -p ~/.vim/autoload ~/.vim/bundle
@@ -71,8 +72,8 @@ pip install ipython
 pip install isort
 pip install virtualenv
 
-mkdir ~/workspaces/playeah
-cd ~/workspaces/playeah
+mkdir ~/workspaces/proj_playeah
+cd ~/workspaces/proj_playeah
 virtualenv venv
 source venv/bin/activate
 pip install -r ~/Fmcevoy/playeah_dependencies

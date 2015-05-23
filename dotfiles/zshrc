@@ -24,6 +24,8 @@ alias c='new_tmux_session'
 alias grep='grep --color'
 alias ls='ls --color'
 alias wp='cd ~/workspaces/playeah'
+alias wpp='cd ~/workspaces/playeah/playeah'
+alias wps='cd /home/fmcevoy/workspaces/playeah/venv/lib/python3.4/site-packages'
 alias act='source venv/bin/activate'
 alias deact='deactivate'
 gdd() {
