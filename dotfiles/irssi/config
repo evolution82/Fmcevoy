@@ -5,7 +5,7 @@ settings = {
     nick = "fmcevoy";
   };
   "fe-common/core" = { autolog = "yes"; theme = "weed"; };
-  "fe-text" = { };
+  "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = {
     awl_all_disable = "no";
     awl_automode = "sbar";
@@ -27,19 +27,23 @@ settings = {
   };
 };
 
-chatnets = { Undernet = { type = "IRC"; }; };
+chatnets = { Undernet = { type = "IRC"; }; Freenode = { type = "IRC"; }; };
 
 servers = (
   {
-    address = "ix1.undernet.org";
-    chatnet = "Undernet";
-    port = "6697";
+    address = "holmes.freenode.net";
+    chatnet = "Freenode";
+    port = "6667";
+    password = "ForeverYoung82";
+    use_ssl = "no";
+    ssl_verify = "no";
     autoconnect = "yes";
   }
 );
 
 channels = (
   { name = "#python"; chatnet = "Undernet"; autojoin = "Yes"; },
+  { name = "#python"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {

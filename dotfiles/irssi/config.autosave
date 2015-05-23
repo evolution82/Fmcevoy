@@ -27,19 +27,19 @@ settings = {
   };
 };
 
-chatnets = { Amazon = { type = "IRC"; }; IRCnet = { type = "IRC"; }; };
+chatnets = { Undernet = { type = "IRC"; }; };
 
 servers = (
   {
-    address = "irc.kpnqwest.fi";
-    chatnet = "IRCnet";
-    port = "6697";
+    address = "BROADWAY.NY.US.DAL.NET";
+    chatnet = "Undernet";
+    port = "6667";
     autoconnect = "yes";
   }
 );
 
-channels = ( 
-  { name = "#python"; chatnet = "IRCnet"; autojoin = "Yes"; }
+channels = (
+  { name = "#python"; chatnet = "Undernet"; autojoin = "Yes"; }
 );
 
 aliases = {
