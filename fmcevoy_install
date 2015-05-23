@@ -1,3 +1,4 @@
+git clone https://github.com/fmcevoy/Fmcevoy.git
 sudo yum -y install git zsh tmux ack irssi patch gcc
 sudo yum -y install mysql-devel ruby-devel rubygems
 sudo yum install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
