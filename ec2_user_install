@@ -1,0 +1,9 @@
+sudo yum -y install zsh
+sudo useradd fmcevoy
+sudo chsh -s /bin/zsh fmcevoy
+sudo sh -c 'echo "fmcevoy ALL = NOPASSWD: ALL" >> /etc/sudoers.d/cloud-init'
+sudo sh -c 'echo "fmcevoy ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/cloud-init'
+sudo -u fmcevoy sh -c 'ssh-keygen -t rsa'
+sudo -u fmcevoy sh -c 'cp ~/.ssh/rsa_id.pub ~/.ssh/authorized_keys'
+sudo -u fmcevoy sh -c 'https://github.com/fmcevoy/Fmcevoy.git'
+sudo -u fmcevoy sh -c '~/Fmcevoy/fmcevoy_install'
