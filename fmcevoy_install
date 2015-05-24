@@ -1,6 +1,8 @@
 sudo rm ~/.zshrc
 git clone https://github.com/fmcevoy/Fmcevoy.git
+cd ~/Fmcevoy
 git remote set-url origin git@github.com:fmcevoy/Fmcevoy.git
+cd ~
 sudo yum -y install git zsh tmux ack irssi patch gcc
 sudo yum -y install mysql-devel ruby-devel rubygems
 sudo yum -y  install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
