@@ -86,7 +86,7 @@ mkdir ~/workspaces/proj_playeah
 cd ~/workspaces/proj_playeah
 virtualenv venv
 source venv/bin/activate
-pip install -r ~/Fmcevoy/playeah_dependencies
+pip install -r ~/Fmcevoy/playeah/playeah_dependencies
 
 generate_github_key
 github
