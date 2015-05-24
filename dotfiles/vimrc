@@ -19,7 +19,7 @@ autocmd InsertLeave * call ToggleRelativeOn()
 autocmd FileType python setlocal completeopt-=preview
 set rtp +=/home/fmcevoy/.vim/bundle/powerline/powerline/bindings/vim
 set noswapfile
-set wildignore+=*.pyc,*.o,*.obj,.git,build
+set wildignore+=*egg*,*.pyc,*.o,*.obj,.git,build
 set splitright
 set ttymouse=xterm2
 set backspace=2
