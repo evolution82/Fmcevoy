@@ -81,5 +81,3 @@ source venv/bin/activate
 pip install -r ~/Fmcevoy/playeah_dependencies
 
 generate_github_key
-github
-git clone git@github.com:fmcevoy/playeah.git
