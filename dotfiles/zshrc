@@ -8,6 +8,7 @@ export O_RUNNING='TRUE'
 export TZ=GMT
 export PATH=/home/fmcevoy/.pyenv/bin:$PATH
 export PATH=~:~/Fmcevoy/:$PATH
+export PATH=~:~/Fmcevoy/playeah/:$PATH
 stty erase '^?'
 
 TERM='xterm-256color'
