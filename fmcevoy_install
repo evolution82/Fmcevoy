@@ -14,6 +14,7 @@ if [ ! -d "~/browse" ]; then
 fi
 ln -s ~/Fmcevoy/fintanmcevoy.zsh-theme ~/.oh-my-zsh/themes/fintanmcevoy.zsh-theme
 ln -s ~/Fmcevoy/dotfiles/zshrc ~/.zshrc
+ln -s ~/Fmcevoy/dotfiles/zprofile ~/.zprofile
 ln -s ~/Fmcevoy/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/Fmcevoy/dotfiles/jrnl_config ~/.jrnl_config
 ln -s ~/Fmcevoy/dotfiles/vimrc ~/.vimrc
