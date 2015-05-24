@@ -12,8 +12,8 @@ stty erase '^?'
 
 TERM='xterm-256color'
 eval "$(pyenv init -)"
-alias python='ipython'
 alias nano='vim'
+alias runpy='ipython'
 alias v='vim'
 alias j='jrnl'
 alias j1='jrnl -1'
