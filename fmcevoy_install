@@ -62,7 +62,11 @@ sudo make install
 cd ~
 sudo rm -r mdp
 
-eval $(ssh-agent)
+export SSH_AUTH_SOCK=~/.ssh/ssh-agent.$HOSTNAME.sock
+ssh-add -l 2>/dev/null >/dev/null
+if [ $? -ge 2 ]; then
+  ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null
+fi
 
 pyenv install 3.4.3
 pyenv global 3.4.3 
@@ -83,3 +87,4 @@ source venv/bin/activate
 pip install -r ~/Fmcevoy/playeah_dependencies
 
 generate_github_key
+github
