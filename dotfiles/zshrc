@@ -6,13 +6,15 @@ DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 export O_RUNNING='TRUE'
 export TZ=GMT
-export PATH=/home/fmcevoy/.pyenv/bin:$PATH
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=~:~/Fmcevoy/:$PATH
 export PATH=~:~/Fmcevoy/playeah/:$PATH
 stty erase '^?'
 
 TERM='xterm-256color'
 eval "$(pyenv init -)"
+eval "$(rbenv init -)"
 alias nano='vim'
 alias runpy='ipython'
 alias v='vim'
