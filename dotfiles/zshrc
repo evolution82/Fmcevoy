@@ -1,4 +1,4 @@
-export PATH="/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/home/ec2-user/bin:/opt/aws/bin:/opt/aws/bin:/home/ec2-user/bin"
+export PATH="/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/home/ec2-user/bin:/opt/aws/bin:/opt/aws/bin:/home/ec2-user/bin:$HOME/bin"
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="fintanmcevoy"
 plugins=(git)
