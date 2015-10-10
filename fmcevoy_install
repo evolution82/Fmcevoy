@@ -73,6 +73,7 @@ if [ $? -ge 2 ]; then
 fi
 
 pyenv install 3.4.3
+pyenv install 2.7.6
 pyenv global 3.4.3 
 rbenv install 2.2.2
 rbenv global 2.2.2
