@@ -3,7 +3,7 @@ git clone https://github.com/fmcevoy/Fmcevoy.git
 cd ~/Fmcevoy
 git remote set-url origin git@github.com:fmcevoy/Fmcevoy.git
 cd ~
-sudo yum -y install git zsh tmux ack irssi patch gcc
+sudo yum -y install git zsh tmux ack irssi patch gcc lynx
 sudo yum -y install mysql-devel ruby-devel rubygems
 sudo yum -y  install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
@@ -74,12 +74,9 @@ fi
 
 pyenv install 3.4.3
 pyenv install 2.7.6
-pyenv global 3.4.3 
-rbenv install 2.2.2
-rbenv global 2.2.2
-gem install pry
-
 easy_install pip
+
+pyenv global 2.7.6
 pip install --upgrade pip
 pip install flake8
 pip install pylint
@@ -87,6 +84,21 @@ pip install jrnl
 pip install ipython
 pip install isort
 pip install virtualenv
+pip install awsebcli
+pip install gcloud
+
+pyenv global 3.4.3 
+pip install --upgrade pip
+pip install flake8
+pip install pylint
+pip install jrnl
+pip install ipython
+pip install isort
+pip install virtualenv
+
+rbenv install 2.2.2
+rbenv global 2.2.2
+gem install pry
 
 mkdir ~/workspaces/proj_playeah
 cd ~/workspaces/proj_playeah
