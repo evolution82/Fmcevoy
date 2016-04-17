@@ -43,7 +43,9 @@ servers = (
 
 channels = (
   { name = "#python"; chatnet = "Undernet"; autojoin = "Yes"; },
-  { name = "#python"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#python"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#crystal-lang"; chatnet = "Undernet"; autojoin = "Yes"; },
+  { name = "#crystal-lang"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {

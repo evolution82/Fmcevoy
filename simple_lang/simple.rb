@@ -33,6 +33,11 @@ class DoNothing
     def ==(other_statement)
         other_statement.instance_of?(DoNothing)
     end
+
+    def evaluate(environment)
+        environment
+    end
+
 end
 
 class Assign < Struct.new(:name, :expression)
@@ -54,6 +59,10 @@ class Assign < Struct.new(:name, :expression)
         else
             [DoNothing.new(), environment.merge({name => expression})]
         end
+    end
+
+    def evaluate(environment)
+        environment.merge({name => expression.evaluate(environment)})
     end
 
 end
@@ -83,6 +92,15 @@ class If < Struct.new(:condition, :consequence, :alternative)
             end
         end
     end
+
+    def evaluate(environment)
+        case condition.evaluate(environment)
+        when Boolean.new(true)
+            consequence.evaluate(environment)
+        when Boolean.new(false)
+            alternative.evaluate(environment)
+        end
+    end
 end
 
 class Sequence < Struct.new(:first, :second)
@@ -106,6 +124,10 @@ class Sequence < Struct.new(:first, :second)
             reduced_first, reduced_environment = first.reduce(environment)
             [Sequence.new(reduced_first, second), reduced_environment]
         end
+    end
+
+    def evaluate(environment)
+        second.evaluate(first.evaluate(environment))
     end
 end
 
@@ -237,6 +259,9 @@ class Add < Struct.new(:left,:right)
     end
 
     def evaluate(environment)
+        if right.value == 2
+            pry.binding
+        end
         Number.new(left.evaluate(environment).value + right.evaluate(environment).value) 
     end
 end
@@ -269,11 +294,12 @@ class Multiply < Struct.new(:left,:right)
     end
 end
 
-exp =
-Machine.new(
-    Add.new(
-        Multiply.new(Number.new(2), Number.new(3)),
-        Multiply.new(Number.new(2), Number.new(3)),
+def statement
+    Sequence.new(
+        Assign.new(Variable.new(:x), Add.new(Number.new(1), Number.new(1))),
+        Assign.new(Variable.new(:y), Add.new(Variable.new(:x), Number.new(2)))
     )
-)
+end
+statement.evaluate({})
 pry.binding
+
