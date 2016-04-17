@@ -1,0 +1,11 @@
+wget http:/wget http://lng.org/download/otp_src_18.3.tar.gz
+tar -zxf otp_src_18.3.tar.gz
+cd otp_src_18.3
+export ERL_TOP=`pwd`
+./configure
+make
+sudo make install
+git clone https://github.com/elixir-lang/elixir.git
+cd elixir
+make clean test
+export PATH=$PATH:~/elixir/bin
