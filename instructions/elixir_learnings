@@ -1,0 +1,25 @@
+create a todo file
+{
+    "1000": {
+        "task": "Ring home",
+        "label": "call",
+        "day": "Mon"
+    }
+}
+mix new first_proj <= create new project
+vim mix.exs <= where you add deps
+in deps function add {:poison, "~> 2.1.0"} <= Add json encoder/decoder
+iex -S mix <= start project in context of mix (needed for dep loading)
+{status, data} = File.read "todo.txt" <= read todo file in
+{status, decoded} = Poison.decode(data) <= Decode Data into hash
+decoded["1000"] <= display key 1000
+
+Setting up an Application requires some boilerplating
+https://speakerdeck.com/st23am/writing-command-line-applications-in-elixir
+Pretty much follow that pattern
+For our toto application we need a list boolean arg
+
+
+parse arguments
+have a db
+have users
