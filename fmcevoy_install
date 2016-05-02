@@ -5,7 +5,8 @@ git remote set-url origin git@github.com:fmcevoy/Fmcevoy.git
 cd ~
 sudo yum -y install git zsh tmux ack irssi patch gcc lynx
 sudo yum -y install mysql-devel ruby-devel rubygems
-sudo yum -y  install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
+sudo yum -y install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
+sudo yum -y install nodejs npm --enablerepo=epel
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -122,6 +123,10 @@ export PATH=$PATH:~/elixir/bin
 cd ~
 rm otp_src_18.3.tar.gz
 rm -r otp_src_18.3
+
+yes | mix do local.hex
+yes | mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+
 
 ~/Fmcevoy/install_postgresql.sh
 
