@@ -106,5 +106,24 @@ virtualenv venv
 source venv/bin/activate
 pip install -r ~/Fmcevoy/playeah/playeah_dependencies
 
+cd ~
+wget http://erlang.org/download/otp_src_18.3.tar.gz
+tar -zxf otp_src_18.3.tar.gz
+cd otp_src_18.3
+export ERL_TOP=`pwd`
+./configure
+make
+sudo make install
+cd ~
+git clone https://github.com/elixir-lang/elixir.git
+cd elixir
+make clean test
+export PATH=$PATH:~/elixir/bin
+cd ~
+rm otp_src_18.3.tar.gz
+rm -r otp_src_18.3
+
+~/Fmcevoy/install_postgresql.sh
+
 generate_github_key
 github
